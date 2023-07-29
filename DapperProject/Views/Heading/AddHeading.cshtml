@@ -1,0 +1,14 @@
+﻿@model DapperProject.DAL.Entities.Headings
+@{
+    Layout = null;
+}
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<div class="container">
+    <br /><br />
+    <form method="post">
+    <label>Başlık Adı</label>
+    <input type="text" class="form-control" asp-for="HeadingName" />
+    <br />
+        <button class="btn btn-primary">Başlığı Ekle</button>
+    </form>
+</div>

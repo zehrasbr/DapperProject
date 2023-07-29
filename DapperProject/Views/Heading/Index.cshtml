@@ -1,0 +1,29 @@
+﻿@model List<DapperProject.DAL.Entities.Headings>
+@{
+    Layout = null;
+}
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<div class="container">
+    <br /><br />
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>Başlık</th>
+            <th>Durum</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.HeadingID</td>
+                <td>@item.HeadingName</td>
+                <td>@item.HeadingStatus</td>
+                <td><a href="/Heading/DeleteHeading/@item.HeadingID" class="btn btn-danger">Sil</a></td>
+                <td><a href="/Heading/UpdateHeading/@item.HeadingID" class="btn btn-success">Güncelle</a></td>
+            </tr>
+        }
+    </table>
+    <td><a href="/Heading/AddHeading" class="btn btn-primary">Yeni Başlık Girişi</a></td>
+</div>

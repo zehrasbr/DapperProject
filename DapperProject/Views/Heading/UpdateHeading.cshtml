@@ -1,0 +1,39 @@
+﻿@model DapperProject.DAL.Entities.Headings
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<div class="container">
+    <br /><br />
+    <form method="post">
+        <input type="hidden" asp-for="HeadingID" />
+        <label>Başlık Adı</label>
+        <input type="text" class="form-control" asp-for="HeadingName" />
+        <br />  
+        <label>Başlık Durum</label>
+        <br />
+        @if (Model.HeadingStatus==true)
+        {
+            <input type="radio" name="HeadingStatus" value="True" checked/>
+            <span>Aktif</span>
+
+            <input type="radio" name="HeadingStatus" value="False"/>
+            <span>Pasif</span>
+        }
+        else
+        {
+            <input type="radio" name="HeadingStatus" value="True"/>
+            <span>Aktif</span>
+
+            <input type="radio" name="HeadingStatus" value="False" checked />
+            <span>Pasif</span>
+        }
+        <br /><br />
+        <td><a href="/Heading/Index" class="btn btn-danger">İptal</a></td>
+        <br /> <br /><br />
+        <button class="btn btn-dark">Başlığı Güncelle</button>
+    </form>
+</div>
